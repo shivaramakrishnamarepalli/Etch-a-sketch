@@ -126,7 +126,16 @@ function setCurrentMode(newMode) {
 }
  
  
-
+const sizeSlider = document.querySelector('#sizeSlider');
+const sizeChanger = document.querySelector('#sizeChanger');
+const dis=document.createElement('div');
+dis.innerText=`${n}x${n}`;
+sizeChanger.appendChild(dis);
+sizeSlider.oninput=(e)=>{grid.innerHTML='';createBox(e.target.value);display(e.target.value)}
+function display(e)
+{
+  dis.innerText=`${n}x${n}`;
+}
 
 
 function increment(e)
@@ -140,5 +149,4 @@ function increment(e)
     const opacity = parseFloat(e.target.style.backgroundColor.slice(14));
     e.target.style.backgroundColor = `RGBA(0, 0, 0, ${opacity + 0.1})`;
   }
-
 }
