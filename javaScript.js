@@ -1,44 +1,38 @@
 let n=16;
 let curColor="black";
 let mode='colorMode';
- 
-let mouseDown = false
+
+let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true)
 document.body.onmouseup = () => (mouseDown = false)
- 
- 
- 
+
+// query selectors
 const gridCont=document.querySelector('#grid');
 const buttons=document.querySelector("#buttons");
 const colorPicker=document.getElementById('colorPicker');
 const clear=document.querySelector("#clear");
 const button=document.querySelector('button');
- 
 const colorMode=document.querySelector("#colorMode");
 const rainbowMode=document.querySelector("#rainbowMode");
 const eraser=document.querySelector("#eraser");
 const greyScale =document.querySelector('#greyScale');
- 
- 
+
+// event listeners
 colorPicker.oninput=(e)=>{setCurrentColor(e.target.value);setCurrentMode("colorMode");}
 colorMode.onclick=(e)=>{setCurrentMode(e.target.id);  }
 eraser.onclick=(e)=>{setCurrentMode(e.target.id);  }
 rainbowMode.onclick=(e)=>{setCurrentMode(e.target.id);  }
 greyScale.onclick=(e)=>{setCurrentMode(e.target.id);}
- 
- 
 gridCont.onmouseover=(e)=>changeColor(e);
 gridCont.onmousedown=(e)=>changeColor(e);//if i use onlick this is also reacting to mouse up and changig color of grid completely.
 clear.onclick=()=>{grid.innerHTML='';createBox(n);}
- 
-// transform
+
+//To transform
 const trans = document.querySelectorAll('button');
-trans.forEach(button => button.addEventListener('mouseover',addTransition) );
- 
+trans.forEach(button => button.addEventListener('mouseover',addTransition));
 const tend = document.querySelectorAll('button');
-tend.forEach(button => button.addEventListener('mouseout',removeTransition) );
+tend.forEach(button => button.addEventListener('mouseout',removeTransition));
 tend.forEach(button => button.addEventListener('click',removeTransition) );
- 
 function removeTransition(e)
 {
   this.classList.remove('onpoint');
@@ -48,8 +42,9 @@ function addTransition(e)
   if(e.target.id==mode) return;
   this.classList.add('onpoint');
 }
- 
- 
+
+
+// Function to create grid
 createBox(n);
 function createBox(num)
 {
@@ -70,9 +65,8 @@ function createBox(num)
     }
   }
 }
- 
- 
- 
+
+
 function changeColor(e){
   if (e.type === 'mouseover' && !mouseDown) return;
   if(mode=="colorMode")
@@ -95,13 +89,13 @@ function changeColor(e){
     increment(e);
   }
 }
- 
+
 function setCurrentColor(newColor)
 {
   curColor=newColor;
 }
- 
- 
+
+//function to shift between modes 
 setCurrentMode(mode);
 function setCurrentMode(newMode) {
   if (mode === 'rainbowMode') {
@@ -124,20 +118,9 @@ function setCurrentMode(newMode) {
     greyScale.classList.add('active');
   }
 }
- 
- 
-const sizeSlider = document.querySelector('#sizeSlider');
-const sizeChanger = document.querySelector('#sizeChanger');
-const dis=document.createElement('div');
-dis.innerText=`${n}x${n}`;
-sizeChanger.appendChild(dis);
-sizeSlider.oninput=(e)=>{grid.innerHTML='';createBox(e.target.value);display(e.target.value)}
-function display(e)
-{
-  dis.innerText=`${n}x${n}`;
-}
 
 
+// grey mode
 function increment(e)
 {
   if(!e.target.style.backgroundColor)
@@ -149,4 +132,17 @@ function increment(e)
     const opacity = parseFloat(e.target.style.backgroundColor.slice(14));
     e.target.style.backgroundColor = `RGBA(0, 0, 0, ${opacity + 0.1})`;
   }
+}
+
+
+// size slider 
+const sizeSlider = document.querySelector('#sizeSlider');
+const sizeChanger = document.querySelector('#sizeChanger');
+const dis=document.createElement('div');
+dis.innerText=`${n}x${n}`;
+sizeChanger.appendChild(dis);
+sizeSlider.oninput=(e)=>{grid.innerHTML='';createBox(e.target.value);display(e.target.value)}
+function display(e)
+{
+  dis.innerText=`${n}x${n}`;
 }

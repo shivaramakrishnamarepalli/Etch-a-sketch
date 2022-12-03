@@ -81,10 +81,6 @@ input[type=color] {
     color: rgb(182, 70, 70);;
 }
 
-#sizeChanger{
-    display: flex;
-    flex-direction: column-reverse;
-}
 #buttons{
     display: flex;
     flex-direction: column;
@@ -97,7 +93,6 @@ input[type=color] {
     justify-content: center;
     align-items: center;
 }
-
 .btn{
     transition: all 0.07s;
     border: 1px groove rgb(6 6 6 / 95%);
@@ -121,6 +116,7 @@ input[type=color] {
 
 #sizeChanger{
     display: flex;
+    flex-direction: column-reverse;
     align-items: center;
     margin-top: 30px;
     color:#fdea04f7;
@@ -135,14 +131,12 @@ input[type=color] {
     accent-color: #971c1c;
     background-color: red;
 }
-
 .active{
     background-color: rgb(213 35 186 / 40%);
     color: white;
     text-shadow: 2px 2px 2px #000000;
     box-shadow:2px 2px 3px #000000;
 }
-
 .onpoint{
     transform: scale(1.1);
     color: white;
