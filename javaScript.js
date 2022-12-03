@@ -124,3 +124,21 @@ function setCurrentMode(newMode) {
     greyScale.classList.add('active');
   }
 }
+ 
+ 
+
+
+
+function increment(e)
+{
+  if(!e.target.style.backgroundColor)
+  {
+    e.target.style.backgroundColor=`RGBA(0,0,0,0.0)`;
+  }
+  else{
+    const color=e.target.style.backgroundColor;
+    const opacity = parseFloat(e.target.style.backgroundColor.slice(14));
+    e.target.style.backgroundColor = `RGBA(0, 0, 0, ${opacity + 0.1})`;
+  }
+
+}
