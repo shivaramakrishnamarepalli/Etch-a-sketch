@@ -1,0 +1,40 @@
+body{
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    background-color: rgb(202, 182, 94);
+    justify-content: space-between;
+}
+.intro{
+    display: flex;
+    flex:1 1 auto;
+    justify-content: space-between;
+}
+.wish{
+    display: flex;
+    flex: 1;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin-top: -38px;
+}
+.icon{
+    margin: 10px;
+    font-size: 35px;
+    font-weight: bolder;
+    color: red;
+    display: flex;
+    background-color: rgb(235, 193, 116);
+    border-radius: 75%;
+    height: 45px;
+    width: 45px;
+    align-items: center;
+    justify-content: center;
+}
+
+.content{
+    margin-top: -35px;
+    display: flex;
+    padding: 10px;
+}
