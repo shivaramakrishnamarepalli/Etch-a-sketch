@@ -38,3 +38,116 @@ body{
     display: flex;
     padding: 10px;
 }
+
+#grid{
+    height: 512px;
+    width: 512px;
+    display: flex;
+    flex: 0 0 auto;
+    background-color: rgb(248, 221, 221);
+    outline: whitesmoke ridge 5px;
+    cursor: pointer;
+    box-shadow:9px 9px 6px #000000;
+}
+
+.coloumn{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.row{
+    display: flex;
+    flex: 1;
+}
+
+input[type=color] {
+    width: 60px;
+    height: 60px; 
+    overflow: hidden;
+    outline: none;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+#colorBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    font-weight: bold;
+    color: rgb(182, 70, 70);;
+}
+
+#sizeChanger{
+    display: flex;
+    flex-direction: column-reverse;
+}
+#buttons{
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 auto;
+    width: 500px;
+    align-items: center;
+    display: flex;
+    flex-direction:column ;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    transition: all 0.07s;
+    border: 1px groove rgb(6 6 6 / 95%);
+    padding: 3px;
+    background-color: rgb(209 226 29 / 13%);
+    height: 40px;
+    width: 240px;
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #601c19b5;
+    cursor: pointer;
+    box-shadow: 4px 4px 4px #000000;
+}
+
+#sizeChanger{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    color:#fdea04f7;
+    font-size: 30px;
+    font-weight: bolder;
+}
+#sizeSlider{
+    height: 50px;
+    width: 300px;
+    margin-top: -10px;
+    cursor: pointer;
+    accent-color: #971c1c;
+    background-color: red;
+}
+
+.active{
+    background-color: rgb(213 35 186 / 40%);
+    color: white;
+    text-shadow: 2px 2px 2px #000000;
+    box-shadow:2px 2px 3px #000000;
+}
+
+.onpoint{
+    transform: scale(1.1);
+    color: white;
+    font-size: 111%;
+    font-weight: bold;
+    box-shadow: 0 0 10px white;
+    background-color: #1F2937;
+}
