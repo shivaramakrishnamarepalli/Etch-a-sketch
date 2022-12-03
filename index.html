@@ -9,5 +9,21 @@
     <title>Etch-a-sketch</title>
 </head>
 <body>
-    </body>
+    <div class="intro">
+        <div class="wish"><h1>Etch-a-sketch!</h1></div>
+        <div class="icon"><i>S</i></div>
+    </div>
+    <div class="content">
+        <div id="buttons">
+            <div id="colorBox"><input type="color" id="colorPicker" name="choose"></div>
+            <button id="colorMode" class="btn">color mode</button>
+            <button id="rainbowMode" class="btn">Rainbow mode</button>
+            <button id="greyScale" class="btn">Grey scale</button>
+            <button id="eraser" class="btn">Eraser</button>
+            <button id="clear" class="btn">Clear</button>
+            <div id="sizeChanger"><input type="range" min="1" max="96" id="sizeSlider" value="16"></div>
+        </div>
+        <div id="grid"></div>
+    </div>
+</body>
 </html>
